@@ -3,7 +3,7 @@
 
 function helloWorld() {
   Logger.log("Hello, World!");
-  
+
 }
 
 //The message will appear when you go back to google sheets 
