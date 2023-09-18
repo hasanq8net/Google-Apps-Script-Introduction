@@ -17,12 +17,6 @@ const circleArea = calculateCircleArea(5);
 
 console.log(circleArea); // Logs "78.53982" to the logging console.
 
-function greetUser() {
-  const USER_NAME = "Bard";
-  console.log(`Hello, ${USER_NAME}!`);
-}
-
-greetUser(); // Logs "Hello, Bard!" to the logging console.
 
 function calculateShippingCost(weight) {
   const SHIPPING_RATE = 1.00;
@@ -35,33 +29,22 @@ const shippingCost = calculateShippingCost(5);
 console.log(shippingCost); // Logs "5.00" to the logging console.
 
 
-// const
-function constExample() {
+//Another example
 
-  // const
-  const x = 30;
-  //console.log(x);
-  //Logger.log(x);
-
-  // const cannot be reassigned, but the value can change
-  // TypeError: Assignment to constant variable.
-  // cannot do this:
-  // x = 50;
-  // console.log(x);
-
-  // const has block scope
-  {
-    console.log(x);
-    const y = 1;
-    console.log(y);
-  }
-
-  // ReferenceError: y is not defined
-  // defined in a child block one level up, not available here
-  console.log(y);
-
+ 
+function calculateShippingCost(weight) {
+  const SHIPPING_RATE = 1.00;
+  return weight * SHIPPING_RATE;
 }
+const shippingCost = calculateShippingCost(5);
+console.log(shippingCost); // Logs "5.00" to the logging console.
 
+function greetUser() {
+  const USER_NAME = "Bard";
+  console.log(`Hello, ${USER_NAME}!`);
+}
+greetUser(); // Logs "Hello, Bard!" to the logging console.
+  
 /**
  * --------------------------------------------------------------
  * let 
@@ -101,6 +84,14 @@ function letExample() {
   //console.log(w);
 }
 
+function multiplyNumbers(x, y) {
+  let product = x * y;
+  return product;
+}
+const result = multiplyNumbers(5, 10);
+console.log(result); // Logs "50" to the logging console.
+
+
 /**
  * --------------------------------------------------------------
  *var 
@@ -126,7 +117,12 @@ function varExample() {
 
 }
 
-
+function multiplyNumbers(x, y) {
+  var product = x * y;
+  return product;
+}
+const result = multiplyNumbers(5, 10);
+console.log(result); // Logs "50" to the logging console.
 
 /**
  * --------------------------------------------------------------
@@ -138,18 +134,6 @@ const SHEET_NAME = 'dataset_2020';
 // other things to note about variables
 function otherNotes() {
 
-  // Cannot access 'alpha' before initialization
-  //console.log(alpha);
-  //const alpha = 10;
-
-  // bad practice to not declare
-  //alpha = 10;
-  //alpha = 20;
-  //console.log(alpha);
-
-  // access global variables
-  console.log(SHEET_NAME);
-}
 
 //another example 
 
@@ -165,3 +149,27 @@ function function2() {
 
 function1();
 function2();
+
+// Global variable another example 
+var myName = "Hassan";
+
+function myFunction() {
+  // Local variable
+  var myAge = 2023 - 2019;
+
+  // Access the global variable `myName`
+  console.log("My name is " + myName);
+
+  // Access the local variable `myAge`
+  console.log("I am " + myAge + " years old.");
+}
+
+// Call the function
+myFunction();
+
+// Access the global variable `myName`
+console.log("My name is " + myName);
+
+// Try to access the local variable `myAge` outside of the function
+console.log("I am " + myAge + " years old."); // ReferenceError: myAge is not defined
+
